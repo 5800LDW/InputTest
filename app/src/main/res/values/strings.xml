@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">InputTest</string>
+    <string name="register_title">帐号注册</string>
+    <string name="app_short_name">PM</string>
+    <string name="char_num">0123456789abcdefghijgklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_+</string>
+    <string name="register_username">用户名</string>
+    <string name="password">密码</string>
+    <string name="repeat_password">重复密码</string>
+    <string name="register">注册</string>
+</resources>

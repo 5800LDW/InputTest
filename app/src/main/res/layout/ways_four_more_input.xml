@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true">
 
     <android.support.v7.widget.Toolbar
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,208 +16,204 @@
         app:title="@string/register_title"
         app:titleTextColor="@color/white"/>
 
-    <RelativeLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:layout_below="@+id/register_toolbar"
+        android:layout_marginTop="20dp"
+        android:overScrollMode="never">
 
-        <android.support.v4.widget.NestedScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
-            android:layout_marginTop="20dp"
-            android:overScrollMode="never">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/register_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/logo_margin_top"
+                android:text="@string/app_short_name"
+                android:textColor="@color/logoColor"
+                android:textSize="@dimen/logo_size"/>
+
+            <android.support.design.widget.TextInputLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/register_etl_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                app:hintTextAppearance="@style/HintAppearance">
 
-                <TextView
-                    android:id="@+id/register_logo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/logo_margin_top"
-                    android:text="@string/app_short_name"
-                    android:textColor="@color/logoColor"
-                    android:textSize="@dimen/logo_size"/>
-
-                <android.support.design.widget.TextInputLayout
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/register_etl_username"
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/register_et_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    app:hintTextAppearance="@style/HintAppearance">
+                    android:digits="@string/char_num"
+                    android:hint="@string/register_username"
+                    android:maxLength="20"
+                    android:singleLine="true"/>
+            </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/register_et_username"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="@string/char_num"
-                        android:hint="@string/register_username"
-                        android:maxLength="20"
-                        android:singleLine="true"/>
-                </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/register_etl_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:textColorHint="@color/hintBlack"
+                app:hintTextAppearance="@style/HintAppearance">
 
-                <android.support.design.widget.TextInputLayout
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/register_etl_password"
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/register_et_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    android:textColorHint="@color/hintBlack"
-                    app:hintTextAppearance="@style/HintAppearance">
+                    android:digits="@string/char_num"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:singleLine="true"/>
+            </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/register_et_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="@string/char_num"
-                        android:hint="@string/password"
-                        android:inputType="textPassword"
-                        android:maxLength="20"
-                        android:singleLine="true"/>
-                </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/register_etl_repeat_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:textColorHint="@color/hintBlack"
+                app:hintTextAppearance="@style/HintAppearance">
 
-                <android.support.design.widget.TextInputLayout
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/register_etl_repeat_password"
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/register_et_repeat_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_vertical_margin"
-                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    android:textColorHint="@color/hintBlack"
-                    app:hintTextAppearance="@style/HintAppearance">
+                    android:digits="@string/char_num"
+                    android:hint="@string/repeat_password"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:singleLine="true"/>
+            </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputEditText
-                        android:id="@+id/register_et_repeat_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="@string/char_num"
-                        android:hint="@string/repeat_password"
-                        android:inputType="textPassword"
-                        android:maxLength="20"
-                        android:singleLine="true"/>
-                </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:textColorHint="@color/hintBlack"
+                app:hintTextAppearance="@style/HintAppearance">
 
-                <android.support.design.widget.TextInputLayout
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_vertical_margin"
-                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    android:textColorHint="@color/hintBlack"
-                    app:hintTextAppearance="@style/HintAppearance">
+                    android:digits="@string/char_num"
+                    android:hint="@string/repeat_password"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:singleLine="true"/>
+            </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="@string/char_num"
-                        android:hint="@string/repeat_password"
-                        android:inputType="textPassword"
-                        android:maxLength="20"
-                        android:singleLine="true"/>
-                </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:textColorHint="@color/hintBlack"
+                app:hintTextAppearance="@style/HintAppearance">
 
-                <android.support.design.widget.TextInputLayout
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_vertical_margin"
-                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    android:textColorHint="@color/hintBlack"
-                    app:hintTextAppearance="@style/HintAppearance">
+                    android:digits="@string/char_num"
+                    android:hint="@string/repeat_password"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:singleLine="true"/>
+            </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="@string/char_num"
-                        android:hint="@string/repeat_password"
-                        android:inputType="textPassword"
-                        android:maxLength="20"
-                        android:singleLine="true"/>
-                </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:textColorHint="@color/hintBlack"
+                app:hintTextAppearance="@style/HintAppearance">
 
-                <android.support.design.widget.TextInputLayout
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_vertical_margin"
-                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    android:textColorHint="@color/hintBlack"
-                    app:hintTextAppearance="@style/HintAppearance">
+                    android:digits="@string/char_num"
+                    android:hint="@string/repeat_password"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:singleLine="true"/>
+            </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="@string/char_num"
-                        android:hint="@string/repeat_password"
-                        android:inputType="textPassword"
-                        android:maxLength="20"
-                        android:singleLine="true"/>
-                </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:textColorHint="@color/hintBlack"
+                app:hintTextAppearance="@style/HintAppearance">
 
-                <android.support.design.widget.TextInputLayout
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_vertical_margin"
-                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    android:textColorHint="@color/hintBlack"
-                    app:hintTextAppearance="@style/HintAppearance">
+                    android:digits="@string/char_num"
+                    android:hint="@string/repeat_password"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:singleLine="true"/>
+            </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="@string/char_num"
-                        android:hint="@string/repeat_password"
-                        android:inputType="textPassword"
-                        android:maxLength="20"
-                        android:singleLine="true"/>
-                </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:textColorHint="@color/hintBlack"
+                app:hintTextAppearance="@style/HintAppearance">
 
-                <android.support.design.widget.TextInputLayout
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_vertical_margin"
-                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    android:textColorHint="@color/hintBlack"
-                    app:hintTextAppearance="@style/HintAppearance">
+                    android:digits="@string/char_num"
+                    android:hint="@string/repeat_password"
+                    android:inputType="textPassword"
+                    android:maxLength="20"
+                    android:singleLine="true"/>
+            </android.support.design.widget.TextInputLayout>
 
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="@string/char_num"
-                        android:hint="@string/repeat_password"
-                        android:inputType="textPassword"
-                        android:maxLength="20"
-                        android:singleLine="true"/>
-                </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
-            </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
-
-        <Button
-            android:id="@+id/register_btn_register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:background="@color/btnBlue"
-            android:text="@string/register"
-            android:textColor="@color/white"
-            android:textSize="@dimen/btn_size"/>
-    </RelativeLayout>
-</LinearLayout>
+    <Button
+        android:id="@+id/register_btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:background="@color/btnBlue"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="@dimen/btn_size"/>
+</RelativeLayout>
